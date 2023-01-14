@@ -62,7 +62,7 @@ h2 {
 }
 
 .carousel-item {
-    overflow: hidden;
+
     white-space: nowrap;
 }
 
@@ -84,4 +84,83 @@ h2 {
 
 .btn.btn-secondary.ml-3.mt-3 {
     color: rgb(128 128 128);
+}
+
+.card {
+    position: absolute;
+    transition: transform 0.3s ease;
+    transform: translateX(0px);
+    border: none;
+    background-color: var(--bg-color);
+
+}
+
+.card-body {
+    transition: 0.25s;
+    opacity: 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    padding-bottom: 10px;
+}
+
+.movie-img.img-fluid {
+    border-radius: 2px;
+}
+
+.card:hover {
+    z-index: 10;
+    transition: transform 0.25s;
+    transform: translatey(-3vw) scale(1.5);
+}
+
+.card:hover .card-body {
+    opacity: 1;
+}
+
+.carousel-inner {
+    overflow: visible;
+}
+
+.video-icon-row {
+    color: white;
+    font-size: 25px;
+}
+
+.video-text-row {
+    display: flex;
+    align-items: center;
+}
+
+
+.video-description {
+    color: #46d369;
+    font-size: 0.75rem;
+}
+
+.age-rating {
+    color: white;
+    font-size: 0.75rem;
+    border: 1px solid hsla(0, 0%, 100%, .4);
+}
+
+.video-length {
+    color: white;
+    font-size: 0.75rem;
+}
+
+.player-feature-badge {
+    align-self: center;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 0.5rem;
+    border: 1px solid hsla(0, 0%, 100%, .4);
+    border-radius: 3px;
+}
+
+.video-text-row-lower {
+    font-size: 0.75rem;
+    color: white;
+}
+
+.middle-dot {
+    font-size: 20px;
+    color: gray;
 }
