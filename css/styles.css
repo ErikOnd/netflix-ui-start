@@ -205,10 +205,23 @@ h2 {
     font-size: 23px;
 }
 
-.account-info {
-    opacity: 0;
-}
-
 .row.pl-4 {
     cursor: pointer;
+}
+
+.profil-editor-img {
+    max-width: 10px;
+}
+
+.h1-profile {
+    font-size: 5rem;
+}
+
+.language-profile {
+    font-size: 31px;
+    color: #ccc;
+}
+
+.profil-paragraph {
+    color: white;
 }

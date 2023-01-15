@@ -2,33 +2,29 @@ $('.carousel').carousel({
     interval: false,
 });
 
-
 let profilePicture = document.querySelectorAll('.d-lg-block')[3];
 let accountInfo = document.getElementsByClassName('account-info')[0];
+accountInfo.style.display = "none";
 
-profilePicture.addEventListener('mouseover', function () {
-    accountInfo.style.opacity = "1";
+document.getElementById('manageProfiles').addEventListener('click', function () {
+    window.open('profile.html', "_self")
 })
 
-profilePicture.addEventListener('mouseleave', function () {
-    setTimeout(
-
-
-        function () {
-            accountInfo.addEventListener('mouseover', function () {
-                accountInfo.style.opacity = "1"
-            })
-
-            accountInfo.addEventListener('mouseout', function () {
-                accountInfo.style.opacity = "0"
-            })
-        }, 500);
-
-
-
-
-
+document.getElementById('userAccount').addEventListener('click', function () {
+    window.open('settings.html', "_self")
 })
+
+
+profilePicture.addEventListener('click', function () {
+    if (accountInfo.style.display === 'none') {
+        accountInfo.style.display = "block";
+    } else {
+        accountInfo.style.display = "none";
+    }
+})
+
+
+
 
 
 
