@@ -11,5 +11,25 @@ profilePicture.addEventListener('mouseover', function () {
 })
 
 profilePicture.addEventListener('mouseleave', function () {
-    accountInfo.style.opacity = "0";
+    setTimeout(
+
+
+        function () {
+            accountInfo.addEventListener('mouseover', function () {
+                accountInfo.style.opacity = "1"
+            })
+
+            accountInfo.addEventListener('mouseout', function () {
+                accountInfo.style.opacity = "0"
+            })
+        }, 500);
+
+
+
+
+
 })
+
+
+
+
