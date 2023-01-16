@@ -12,19 +12,19 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row m-0">
+    <div class="container profile-container">
+        <div class="row m-0 heading-row">
             <h1 class="h1-profile">Edit Profile</h1>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-2"><img src="assets/avatar.png" class="img-fluid" alt=""></div>
-            <div class="col-5">
-                <div class="row">
-                    <input class="form-control-lg" type="text" value="John Doe">
+            <div class="col">
+                <div class="row m-0">
+                    <input class="form-control-lg profile-input w-100" type="text" value="John Doe">
 
                 </div>
-                <div class="row mt-4 language-profile">Language:</div>
-                <div class="row mt-1">
+                <div class="row m-0 mt-4 language-profile">Language:</div>
+                <div class="row m-0 mt-1">
                     <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
@@ -38,12 +38,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4 language-profile">Game Handler:</div>
-                <div class="row profil-paragraph">
-                    <p>Your handle is a unique name that'll be used for playing with other Netflix members across all
+                <div class="row m-0 mt-4 language-profile">Game Handler:</div>
+                <div class="row m-0 profil-paragraph">
+                    <p>Your handle is a unique name that'll be used for playing with other Netflix members across
+                        all
                         Netflix Games.</p>
                 </div>
+                <div class="row m-0 mb-5 next-section">
+                    <input class="form-control-lg profile-input w-100" type="text" placeholder="Create Game Handler"
+                        maxlength="16">
+                </div>
+                <div class="row m-0 mt-4 language-profile">Maturity Settings:</div>
             </div>
+
         </div>
     </div>
 
