@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Netflix Clone</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img class="img-logo ml-4" src="assets/netflix_logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">TV Shows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Recently Added</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My List</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <li class="nav-item d-none d-lg-block">
+                    <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
+                </li>
+                <li class="nav-item d-none d-lg-block">
+                    <a class="nav-link" href="#" style="font-size: 12px">KIDS</a>
+                </li>
+                <li class="nav-item d-none d-lg-block">
+                    <a class="nav-link" href="#"><i class="bi bi-bell-fill" style="font-size: 20px"></i></a>
+                </li>
+                <li class="nav-item mr-5 d-none d-lg-block">
+                    <a class="nav-link" href="#"><img class="profile-picture" src="assets/avatar.png" alt=""><i
+                            class="bi bi-caret-down-fill ml-2" style="font-size: 10px"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="account-info">
+        <i class="bi bi-caret-up-fill for-hover-profile"></i>
+        <div class="hover-profile py-3">
+            <div class="row pl-4 my-2 pr-5 d-flex align-items-center"><img class="profile-picture mr-2"
+                    src="assets/avatar.png" alt="">John Doe
+            </div>
+            <div class="row pl-4 mb-2 mt-3  pr-5 d-flex align-items-center" id="manageProfiles"><i
+                    class="bi bi-pencil mr-3"></i>Manage Profiles
+            </div>
+            <div class="row pl-4 my-2 pr-5 d-flex align-items-center"><i
+                    class="bi bi-person-bounding-box mr-3"></i>Transfer
+                Profile
+            </div>
+            <div class="row pl-4 my-2 pr-5 d-flex align-items-center" id="userAccount"><i
+                    class="bi bi-person-fill mr-3"></i>Account </div>
+            <div class="row pl-4 my-2 pr-5 d-flex align-items-center pb-2 bottom-border"><i
+                    class="bi bi-question-circle mr-3"></i>Help
+                Center</div>
+            <div class="row m-0 d-flex justify-content-center">Sign out of Netflix</div>
+        </div>
+    </div>
+    <div class="container-fluid pl-5">
+        <div class="row col-12 align-items-center">
+            <div class="col-3 p-0 align-items-center text-nowrap">
+                <h1 class=" mr-5 text-nowrap">TV Shows</h1>
+                <div class="btn-group geners-btn mb-3">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" style="background-color: black;">
+                        Genres
+                    </button>
+                    <div class="dropdown-menu" id="movie-categorys">
+                    </div>
+                </div>
+            </div>
+            <div class="col mr-3 d-none d-sm-block">
+                <div class="btn-group float-right" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary"><i class="bi bi-text-left"></i></button>
+                    <button type="button" class="btn btn-secondary"><i class="bi bi-fullscreen"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="movie-col">
+
+            </div>
+        </div>
+
+        <!-- Images go here -->
+    </div>
+    <div class="container px-5">
+        <div class="row px-3">
+            <i class="bi bi-facebook bottom-icon mr-4"></i>
+            <i class="bi bi-instagram bottom-icon mr-4 "></i>
+            <i class="bi bi-twitter bottom-icon mr-4"></i>
+            <i class="bi bi-youtube bottom-icon mr-4"></i>
+        </div>
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 bottom-content mt-4 px-3">
+            <div class="col pl-0">
+                <p class="bottom-text">Audio and Subtitles</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Audio Description</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Help Center</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Gift Cards</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Media Center</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Incestro Relations</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Jobs</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Ters of Use</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Privacy</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Legel Notices</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Cookie Preferencs</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Corporate Information</p>
+            </div>
+            <div class="col pl-0">
+                <p class="bottom-text">Cantact Us</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-secondary ml-3 mt-3">Service Code</button>
+        </div>
+        <div class="row">
+            <p class="bottom-text ml-3 mt-3">©1997-2023 Netflix, inc.</p>
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="js/action.js"></script>
+</body>
+
+</html>
