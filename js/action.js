@@ -3,6 +3,8 @@ const params = new URLSearchParams(location.search)
 const movieCategories = ['Action', 'Drama', 'Horror', 'Comedy', 'Thriller']
 const movieCol = document.getElementById('movie-col')
 const movieCategorys = document.getElementById('movie-categorys')
+const carouselInner = document.getElementsByClassName('images-from-backOffice')[0]
+const carouselInner2 = document.getElementsByClassName('images-from-backOffice2')[0]
 let allMovies = [];
 
 const options = {
@@ -12,6 +14,10 @@ const options = {
         'Content-Type': 'application/json'
     })
 }
+
+$('.carousel').carousel({
+    interval: false,
+});
 
 window.onload = async () => {
     createMovieCategoryDrop()
@@ -30,19 +36,39 @@ const loadMovieData = async () => {
     } catch (error) {
         console.log(error)
     }
-    displayData()
+    displayData(window.innerWidth)
 }
 
 
-const displayData = () => {
-    console.log(allMovies[0]);
-    let actionCategory = allMovies[0];
-    actionCategory.forEach(movie => {
-        movieCol.innerHTML +=
+const displayData = (screenWidth) => {
+
+
+    carouselInner.innerHTML = '';
+
+    allMovies[0].map((movie) => {
+
+        carouselInner.innerHTML +=
             `
-       <img src="${movie.imageUrl}" alt="">
-       `
-    });
+            <img src="${movie.imageUrl}"
+                class=" mr-1" alt="...">
+            
+            `
+    })
+
+    allMovies[0].map((movie) => {
+
+        carouselInner2.innerHTML +=
+            `
+            <img src="${movie.imageUrl}"
+                class=" mr-1" alt="...">
+            
+            `
+    })
+
+
+
+
+
 }
 
 
@@ -76,3 +102,88 @@ profilePicture.addEventListener('click', function () {
         accountInfo.style.display = "none";
     }
 })
+
+
+$(window).resize(function () {
+    //console.log($(window).width())
+    displayData($(window).width())
+});
+
+
+
+
+
+
+
+/* 
+2 Picture Carusel * 6
+when smaller than 820px
+
+                        <div class="carousel-item active">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMytOYW-z4x4AFFNEd-gbD2QXIylsVVgijDcfV1F4C0KFea0PLQ6m7TzjF0f39xy-jmuN5MwRRB90v-nLyIKGgw0ajxN_Yz-OHqfME8X2gqts-brdvRO0y_Ajb4sGee9Moeyxxje77b8lEnQ4nEg4BeEBvGHx8ngc4InTxt23fWg8sFASLWj3W8K6Hs0ls.jpg?r=123"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                        </div>
+
+*/
+
+
+
+/*
+3 Picture Carusel * 4
+when smaller than 1200
+
+                        <div class="carousel-item active">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMytOYW-z4x4AFFNEd-gbD2QXIylsVVgijDcfV1F4C0KFea0PLQ6m7TzjF0f39xy-jmuN5MwRRB90v-nLyIKGgw0ajxN_Yz-OHqfME8X2gqts-brdvRO0y_Ajb4sGee9Moeyxxje77b8lEnQ4nEg4BeEBvGHx8ngc4InTxt23fWg8sFASLWj3W8K6Hs0ls.jpg?r=123"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                        </div>
+                        
+
+*/
+
+
+/* 
+4 Picture Caruse * 3
+when smaller than 1570
+
+                        <div class="carousel-item active">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMytOYW-z4x4AFFNEd-gbD2QXIylsVVgijDcfV1F4C0KFea0PLQ6m7TzjF0f39xy-jmuN5MwRRB90v-nLyIKGgw0ajxN_Yz-OHqfME8X2gqts-brdvRO0y_Ajb4sGee9Moeyxxje77b8lEnQ4nEg4BeEBvGHx8ngc4InTxt23fWg8sFASLWj3W8K6Hs0ls.jpg?r=123"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                        </div>
+
+*/
+
+
+
+/* 
+6 Picture Caruse * 2
+
+                        <div class="carousel-item active">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMytOYW-z4x4AFFNEd-gbD2QXIylsVVgijDcfV1F4C0KFea0PLQ6m7TzjF0f39xy-jmuN5MwRRB90v-nLyIKGgw0ajxN_Yz-OHqfME8X2gqts-brdvRO0y_Ajb4sGee9Moeyxxje77b8lEnQ4nEg4BeEBvGHx8ngc4InTxt23fWg8sFASLWj3W8K6Hs0ls.jpg?r=123"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                            <img src="http://occ-0-4415-3212.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABag4KpFOSF9l4FpdM5pl9sYm_6NdgepmoAnSCVWDwVaMBfvDgFHdvgfy_dHupRt8PHByd58w-53QM6N4lJWtQrGjH8iAx1_xhaM.jpg?r=8f3"
+                                class=" mr-1" alt="...">
+                        </div>
+
+*/
+
+
